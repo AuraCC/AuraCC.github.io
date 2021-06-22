@@ -1,0 +1,18 @@
+input {
+    width: 200px;
+}
+#command {
+    height:10px;
+}
+#route-box {
+    width: max-content;
+    margin:auto;
+    background-color: aliceblue;
+    padding: 20px;
+}
+#route-box-title {
+    width: max-content;
+    margin: auto;
+    margin-bottom: 20px;
+    user-select: none;
+}

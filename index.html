@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>AURA Transportation System</title>
+        <script src="main.js"></script>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div id="route-box">
+        <p id="route-box-title">AURA</p>
+        <input autocomplete="off" list="stations" id="start-choice" name="start-choice" placeholder="from" onchange="update_start(this.value)"/>
+        <input autocomplete="off" list="stations" id="end-choice" name="end-choice" placeholder="to" onchange="update_end(this.value)"/>
+        <datalist id="stations"></datalist>
+        <div>
+            <p id="command"></p>
+        </div>
+        </div>
+        <div id="station-list">
+
+        </div>
+    </body>
+</html>
