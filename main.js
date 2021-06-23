@@ -27,6 +27,7 @@ function init() {
                 nm = n[0]
             }
             o.value = nm
+            p.classList.add("station-name")
             p.innerHTML = nm
             a.appendChild(o)
             sl.appendChild(p)

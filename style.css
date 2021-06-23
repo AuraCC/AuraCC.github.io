@@ -16,3 +16,14 @@ input {
     margin-bottom: 20px;
     user-select: none;
 }
+#station-list {
+    padding-left: 50px;
+    padding-right: 50px;
+}
+.station-name {
+    float: left;
+    background: salmon;
+    margin: 20px;
+    padding: 5px;
+    user-select: none;
+}
