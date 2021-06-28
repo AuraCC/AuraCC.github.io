@@ -10,8 +10,10 @@
     <body>
         <div id="route-box">
         <p id="route-box-title">AURA</p>
+        <div id="route-box-inputs">
         <input autocomplete="off" list="stations" id="start-choice" name="start-choice" placeholder="from" onchange="update_start(this.value)"/>
         <input autocomplete="off" list="stations" id="end-choice" name="end-choice" placeholder="to" onchange="update_end(this.value)"/>
+        </div>
         <datalist id="stations"></datalist>
         <div>
             <p id="command"></p>

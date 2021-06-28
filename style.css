@@ -16,6 +16,9 @@ input {
     margin-bottom: 20px;
     user-select: none;
 }
+#route-box-inputs {
+    text-align: center;
+}
 #station-list {
     padding-left: 50px;
     padding-right: 50px;
