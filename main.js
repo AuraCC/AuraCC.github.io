@@ -1,3 +1,5 @@
+const sortObject = obj => Object.keys(obj).sort().reduce((res, key) => (res[key] = obj[key], res), {});
+
 function loadJSON(filePath) {   
 
     var xobj = new XMLHttpRequest();
@@ -10,13 +12,15 @@ function loadJSON(filePath) {
 }
 
 function init() {
-    points = loadJSON('https://raw.githubusercontent.com/auracc/data/main/points.json')
-    computed = loadJSON('https://raw.githubusercontent.com/auracc/data/main/computed.json')
+    data = loadJSON('https://raw.githubusercontent.com/auracc/aura-toml/main/computed.json')
+    console.log(data)
+    points = sortObject(data.nodes)
+    computed = data.dests
 
     a = document.getElementById("stations")
     sl = document.getElementById("station-list")
     for (i in points) {
-        if (['stop','stopjunction','junctionstop'].includes(points[i].type)) {
+        if (points[i].station === true && !(points[i].suggested === false)) {
             o = document.createElement("option")
             p = document.createElement("p")
             n = points[i].name
@@ -28,7 +32,14 @@ function init() {
             }
             o.value = nm
             p.classList.add("station-name")
-            p.innerHTML = nm
+            sy = ""
+            /*
+            if (points[i].type == 'stop') sy = "◇ "
+            if (points[i].type == 'stopjunction') sy = "◈ "
+            if (points[i].type == 'junction') sy = "○ "
+            if (points[i].type == 'junctionstop') sy = "◉ "
+            */
+            p.innerHTML = sy + nm
             a.appendChild(o)
             sl.appendChild(p)
         }
